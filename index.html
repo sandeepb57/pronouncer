@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--  meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Online Audio Record Tool</title>
+    <!--        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+        <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+        <link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg">
+        <meta name="msapplication-TileColor" content="#da532c">-->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="application-name" content="TMobile Pronouncer" />
+    <meta name="generator" content="Powered by Ameripro Solutions (http://www.ameripro-solutions.com)">
+    <meta name="copyright" content="Ameripro Solutions Pvt.Ltd">
+    <meta name="language" content="English">
+    <!-- start Html5 Micro Data -->
+    <!-- end Html5 Micro Data  -->
+    <!-- core CSS -->
+    <!-- <script src="assets/pace/pace.min.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <script src="assets/pace/pace.min.js"></script>
+    <link rel="stylesheet" href="assets/js/jquery.growl.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+               <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+               <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+           <![endif]-->
+</head>
+
+<body>
+    <div class="main-container d-flex align-middle bg-br-primary ht-100v">
+        <div class="container">
+            <div class="col-md-12">
+                <h1 class="tx-info">TMobile<br/> PRONOUNCER
+                </h1>
+                <form class="audio-form" method="POST" action="saveaudiofile.php" enctype="multipart/form-data" onsubmit="return false;">
+                    <div class="row">
+                        <div class="input-group mb-2 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                            <div class="form-group col-md-10 col-sm-10 pr-col-0">
+                                <label for="words"> Word</label>
+                                <input type="search" class="form-control" name="words" id="words" placeholder="Please enter a word" value="" oninput="searchWords(this.value);" />
+                            </div>
+                            <div class="form-group  col-md-2 col-sm-2 mt-md-4 mt-lg-4 d-flex align-items-center justify-content-center">
+                                <button class="icon-add input-group-text  ml-3 tooltipped" id="addword"><i class="icon ion-md-add"></i></button>
+                                <button type="button" class="hidden icon-mic input-group-text ml-3 tooltipped" id="record"><i class="icon ion-md-mic"></i></button>
+                                <button type="button" class="hidden icon-stop input-group-text ml-3 tooltipped" id="stoprecord"><i class="icon ion-md-square"></i></button>
+                                <button type="button" class="hidden icon-play input-group-text ml-3 tooltipped" id="play"><i class="icon ion-md-play"></i></button>
+                                <button type="button" class="hidden icon-stop input-group-text ml-3 tooltipped" id="stopplay"><i class="icon ion-md-square"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="audio-files">
+                        <!-- Audio files -->
+                    </div>
+                    <div class="row">
+                        <div class="input-group mb-2  col-lg-5 offset-lg-3 col-md-6 offset-md-2">
+                            <div class="form-group col-md-12">
+                                <label class="hidden qwert" for="desc" id="desclabel">Word Description</label>
+                                <textarea class="form-control hidden" name="desc" id="desc" placeholder="Description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-footer-buttons">
+                        <div class="input-group mb-2 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                            <div class="col-6  col-sm-4 col-md-5 col-lg-4">
+                                <button class="hidden icon-save input-group-text tooltipped" id="save"><i class="icon ion-md-save"></i>Save</button>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-5 col-lg-4">
+                                <button class="hidden icon-cancel input-group-text tooltipped" id="cancel"><i class="icon ion-md-close"></i> Cancel</button>
+                            </div>
+                        </div>
+                        <div class="input-group mb-2 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                            <div class="col-6  col-sm-4 col-md-5 col-lg-4">
+                                <button class="hidden icon-cancel input-group-text tooltipped" id="clear"><i class="icon ion-md-close"></i>Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="src/recorder.js"></script>
+    <script src="src/Fr.voice.js"></script>
+    <script src="assets/js/jquery-1.12.4.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/bs/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/animate-plus.min.js"></script>
+    <script src="assets/js/jquery.growl.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        window.jQuery || document.write('<script src="../js/minified/jquery-1.11.0.min.js"><\/script>');
+    </script>
+</body>
+
+</html>

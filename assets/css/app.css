@@ -1,0 +1,253 @@
+/*
+    APP Name   : FleetOperate
+    Created on : Aug 14, 2018, 2:38:44 PM
+    Author     : jilanishaik
+    Powered by : www.ameripro-solutions.com
+*/
+
+@charset "utf-8";
+@import url(../bs/css/bootstrap.min.css);
+@import url(../css/animate.min.css);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* pace preloader */
+
+.pace .pace-progress {
+    background: #f7256c;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 3px;
+    box-shadow: 0px 0px 13px 0px rgba(247, 37, 108, 0.49);
+}
+
+pace-progress-inner {
+    background: #ddd;
+}
+
+.pace-done .pace.pace-inactive {
+    display: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+    background: #F7F7F9;
+}
+
+.form-control {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.material-tooltip {
+    padding: 10px 8px;
+    font-size: 1rem;
+    z-index: 2000;
+    background-color: transparent;
+    border-radius: 2px;
+    color: #fff;
+    min-height: 36px;
+    line-height: 120%;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    max-width: calc(100% - 4px);
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    visibility: hidden;
+    background-color: #323232;
+    font-family: "Roboto Mono";
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.ht-100v {
+    min-height: 100%;
+    min-height: 100vh;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.main-container {
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    transition: all 0.3ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+form.audio-form input#words,
+form.audio-form button {
+    height: 50px;
+    border-radius: 5px;
+}
+
+form.audio-form input#words:focus,
+.audio-form textarea#desc {
+    outline: none;
+    box-shadow: none;
+}
+
+.audio-form textarea#desc {
+    border-radius: 5px;
+    height: 95px;
+}
+
+form.audio-form button {
+    width: 50px;
+    padding: 0px 13px;
+}
+
+form.audio-form button i {
+    font-size: 30px;
+}
+
+.form-control:focus {
+    outline: none;
+}
+
+h1.tx-info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    display: block;
+    color: #fd256e;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.audio-form button.icon-play,
+.audio-form button.icon-mic,
+.audio-form button.icon-stop,
+.audio-form button.icon-add,
+.audio-form button.icon-save,
+.audio-form button.icon-cancel {
+    color: #FFF;
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+.audio-form button.icon-save,
+.audio-form button.icon-cancel {
+    border-radius: 3px;
+    height: 45px;
+}
+
+.audio-form button.icon-save i,
+.audio-form button.icon-cancel i {
+    font-size: 25px;
+}
+
+.audio-form button.icon-play,
+.audio-form button.icon-play:focus,
+.audio-form button.icon-play:active,
+.audio-form button.icon-play:visited {
+    background: #30b188!important;
+    border: 1px solid #30b188!important;
+    outline: none;
+}
+
+.audio-form button.icon-mic,
+.audio-form button.icon-mic:focus,
+.audio-form button.icon-mic:active,
+.audio-form button.icon-mic:visited,
+.audio-form button.icon-stop,
+.audio-form button.icon-stop:focus,
+.audio-form button.icon-stop:active,
+.audio-form button.icon-stop:visited {
+    background: #f51c1c!important;
+    border: 1px solid #f51c1c!important;
+    outline: none;
+}
+
+.audio-form button.icon-add,
+.audio-form button.icon-add:focus,
+.audio-form button.icon-add:active,
+.audio-form button.icon-add:visited {
+    background: #1bc7d5!important;
+    border: 1px solid #1bc7d5!important;
+    outline: none;
+    border-radius: 3px;
+}
+
+.audio-form button.icon-play:hover {
+    background: #07cc8d!important;
+    border: 1px solid #07cc8d!important;
+}
+
+.audio-form button.icon-mic:hover {
+    background: #fd0202!important;
+    border: 1px solid #fd0202!important;
+}
+
+.audio-form button.icon-add:hover {
+    background: #03d3e4!important;
+    border: 1px solid #03d3e4!important;
+}
+
+.audio-form button.icon-save:hover {
+    background: #0badef!important;
+    border: 1px solid #0badef!important;
+}
+
+.audio-form button.icon-cancel:hover {
+    background: #ef082c!important;
+    border: 1px solid #ef082c!important;
+}
+
+.audio-form button.icon-save,
+.audio-form button.icon-save:focus,
+.audio-form button.icon-save:active,
+.audio-form button.icon-save:visited {
+    background: #43b7e6!important;
+    border: 1px solid #43b7e6!important;
+}
+
+.audio-form button.icon-cancel,
+.audio-form button.icon-cancel:focus,
+.audio-form button.icon-cancel:active,
+.audio-form button.icon-cancel:visited {
+    background: #f82445!important;
+    border: 1px solid #f82445!important;
+}
+
+.hidden {
+    display: none;
+}
+
+form .form-footer-buttons button {
+    width: 100%;
+}
+
+form .form-footer-buttons button i {
+    padding-right: 0.8rem;
+}
+
+@media all and (max-width:767px) {
+    .pr-col-0 {
+        padding-right: 0px;
+    }
+}
+
+.ui-menu {
+    z-index: 9999!important;
+}
+
+.disabled {
+    box-shadow: none;
+    opacity: 0.7;
+    pointer-events: none;
+    cursor: not-allowed!important;
+}
