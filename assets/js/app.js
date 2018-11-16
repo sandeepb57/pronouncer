@@ -235,6 +235,7 @@ function fetchWordInfo(word) {
             $("#addword").addClass("hidden");
             // #record, #save
             $("#desc, #clear, #desclabel").removeClass("hidden");
+            $("#audio-files").html('');
             $.each(response.words, function(key, files) {
                 $("#audio-files").append(`<div class="input-group mb-2 col-lg-5 offset-lg-3 col-md-6 offset-md-2">
                                             <div class="form-group col-md-12">
